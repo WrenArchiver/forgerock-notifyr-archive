@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body class="stash-theme fullwidth">
+<table width="100%" class="fullwidth">
+<tbody>
+<tr>
+<td class="body-cell" colspan="3">
+<table width="100%">
+<tbody>
+<tr>
+<td bgcolor="#f5f5f5" class="header" style="background-color: #f5f5f5; border-bottom: 1px solid #ccc; padding-left: 20px; height: 50px; padding-top: 10px; padding-bottom: 10px; font-size: 18px; font-family: Arial"><a href="https://stash.forgerock.org/projects/COMMONS" style="color: #3b73af; text-decoration: none; font-size: 17px; font-weight: bold; padding-bottom: 10px">Commons</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/browse" style="color: #3b73af; text-decoration: none; font-size: 17px; font-weight: bold; padding-bottom: 10px">forgerock-auth-filters</a><br />
+<div style="margin: 0; padding: 0; margin-top: 3px">
+phillcunnington has 
+<span class="il">pushed changes</span> to: 'master' 
+</div></td>
+</tr>
+<tr>
+<td>
+<table border="0" width="100%" style="width:100%;min-width:100%">
+<tbody>
+<tr>
+<td style="padding-right:10px;font-size:13px;font-family:Arial" valign="top" nowrap="nowrap"><a href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/commits/2ffa12f2c30701837640f6036c524bb5a0a95c84" style="text-decoration: none; color: #3c78b5;font-family: monospace;; color: #3b73af; text-decoration: none">2ffa12f2c30</a></td>
+<td width="100%" style="width:100%;min-width:100%;padding-right:10px;font-size:13px;font-family:Arial" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://bugster.forgerock.org/jira/browse/CAF-231">CAF-231</a> Add configuration to enable logging out HttpOnly session cookie</td>
+<td nowrap="nowrap" valign="top" style="font-size:13px;font-family:Arial;text-align:right;"><time title="15 September 2015 11:35 AM" datetime="2015-09-15T11:35:00+0100" class="deprecated">15 Sep 2015</time></td>
+</tr>
+<tr>
+<td></td>
+<td colspan="2">
+<table class="aui" style="border-collapse: collapse; margin: 20px 0; width: 100%; margin-top: 5px">
+<tbody>
+<tr style="background: #fff; color: #333">
+<td style="font-size:13px;font-family:Arial;padding-top:2px;padding-right:10px;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/browse?at=master">forgerock-authn-filter/forg...les/session/jwt/AbstractJwtSessionModule.java</a></td>
+<td style="font-size:13px;font-family:Arial;padding-top:2px;text-align:right !important;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc" nowrap="nowrap" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/commits/2ffa12f2c30701837640f6036c524bb5a0a95c84#forgerock-authn-filter/forgerock-jaspi-modules/forgerock-jaspi-jwt-session-module/src/main/java/org/forgerock/jaspi/modules/session/jwt/AbstractJwtSessionModule.java">View changes</a></td>
+</tr> 
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">62</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">62</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">63</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">63</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;String&nbsp;DEFAULT_JWT_SESSION_COOKIE_NAME&nbsp;=&nbsp;&quot;session-jwt&quot;;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">64</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">64</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;String&nbsp;SKIP_SESSION_PARAMETER_NAME&nbsp;=&nbsp;&quot;skipSession&quot;;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">65</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;Request&nbsp;attribute&nbsp;for&nbsp;logout&nbsp;requests&nbsp;which&nbsp;will&nbsp;cause&nbsp;this&nbsp;module&nbsp;to&nbsp;delete&nbsp;the&nbsp;session&nbsp;cookie.&nbsp;*/</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">66</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;String&nbsp;LOGOUT_SESSION_REQUEST_ATTRIBUTE_NAME&nbsp;=&nbsp;&quot;logoutSession&quot;;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">65</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">67</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">66</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">68</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;The&nbsp;Key&nbsp;Alias&nbsp;configuration&nbsp;property&nbsp;key.&nbsp;*/</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">67</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">69</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;String&nbsp;KEY_ALIAS_KEY&nbsp;=&nbsp;&quot;keyAlias&quot;;</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">424</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">426</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;AuthStatus.SEND_SUCCESS;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">425</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">427</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">426</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">428</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">429</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(isLogoutRequest(messageInfo))&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">430</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deleteSessionJwtCookie(messageInfo);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">431</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;AuthStatus.SEND_SUCCESS;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">432</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">433</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">427</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">434</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean&nbsp;jwtValidated&nbsp;=&nbsp;messageInfo.getMap().containsKey(JWT_VALIDATED_KEY);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">428</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">435</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!jwtValidated)&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">429</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">436</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;create&nbsp;jwt</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">438</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">445</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">439</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">446</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;abstract&nbsp;String&nbsp;getPrincipalFromRequest(MessageInfo&nbsp;messageInfo);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">440</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">447</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">448</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;abstract&nbsp;boolean&nbsp;isLogoutRequest(MessageInfo&nbsp;messageInfo);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">449</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">441</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">450</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">442</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">451</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Creates&nbsp;the&nbsp;session&nbsp;JWT,&nbsp;including&nbsp;the&nbsp;custom&nbsp;parameters&nbsp;in&nbsp;the&nbsp;payload&nbsp;and&nbsp;adding&nbsp;the&nbsp;expiration&nbsp;time&nbsp;and&nbsp;then</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">443</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">452</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;sets&nbsp;the&nbsp;JWT&nbsp;onto&nbsp;the&nbsp;response&nbsp;as&nbsp;a&nbsp;Cookie.</td>
+</tr>
+</tbody>
+</table></td>
+</tr> 
+<tr style="background: #fff; color: #333">
+<td style="font-size:13px;font-family:Arial;padding-top:2px;padding-right:10px;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/browse?at=master">forgerock-authn-filter/forg...spi/modules/session/jwt/JwtSessionModule.java</a></td>
+<td style="font-size:13px;font-family:Arial;padding-top:2px;text-align:right !important;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" nowrap="nowrap" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/commits/2ffa12f2c30701837640f6036c524bb5a0a95c84#forgerock-authn-filter/forgerock-jaspi-modules/forgerock-jaspi-jwt-session-module/src/main/java/org/forgerock/jaspi/modules/session/jwt/JwtSessionModule.java">View changes</a></td>
+</tr> 
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">172</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">172</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">173</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">173</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">174</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">174</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;@Override</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">175</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;boolean&nbsp;isLogoutRequest(MessageInfo&nbsp;messageInfo)&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">176</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageInfoContext&nbsp;messageInfoContext&nbsp;=</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">177</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(MessageInfoContext)&nbsp;messageInfo.getMap().get(JaspiAdapters.MESSAGE_INFO_CONTEXT_KEY);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">178</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(Boolean)&nbsp;messageInfoContext.asContext(AttributesContext.class).getAttributes()</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">179</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.get(LOGOUT_SESSION_REQUEST_ATTRIBUTE_NAME);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">180</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">181</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">182</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;@Override</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">175</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">183</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Promise&lt;Void,&nbsp;AuthenticationException&gt;&nbsp;cleanSubject(MessageInfoContext&nbsp;messageInfo,&nbsp;Subject&nbsp;clientSubject)&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">176</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">184</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;newResultPromise(null);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">177</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">185</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+</tbody>
+</table></td>
+</tr> 
+<tr style="background: #fff; color: #333">
+<td style="font-size:13px;font-family:Arial;padding-top:2px;padding-right:10px;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/browse?at=master">forgerock-authn-filter/forg...ules/session/jwt/ServletJwtSessionModule.java</a></td>
+<td style="font-size:13px;font-family:Arial;padding-top:2px;text-align:right !important;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" nowrap="nowrap" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/commits/2ffa12f2c30701837640f6036c524bb5a0a95c84#forgerock-authn-filter/forgerock-jaspi-modules/forgerock-jaspi-jwt-session-module/src/main/java/org/forgerock/jaspi/modules/session/jwt/ServletJwtSessionModule.java">View changes</a></td>
+</tr> 
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">18</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">18</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">19</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">19</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.caf.http.Cookie.getCookies;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">20</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">20</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.caf.http.Cookie.newCookie;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">21</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.jaspi.modules.session.jwt.AbstractJwtSessionModule.LOGOUT_SESSION_REQUEST_ATTRIBUTE_NAME;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">21</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">22</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">22</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">23</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;javax.security.auth.Subject;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">23</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">24</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;javax.security.auth.callback.CallbackHandler;</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">144</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">145</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">145</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">146</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">146</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">147</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;@Override</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">148</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;boolean&nbsp;isLogoutRequest(MessageInfo&nbsp;messageInfo)&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">149</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpServletRequest&nbsp;request&nbsp;=&nbsp;(HttpServletRequest)&nbsp;messageInfo.getRequestMessage();</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">150</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Object&nbsp;isLogoutRequest&nbsp;=&nbsp;request.getAttribute(LOGOUT_SESSION_REQUEST_ATTRIBUTE_NAME);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">151</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;isLogoutRequest&nbsp;!=&nbsp;null&nbsp;&amp;&amp;&nbsp;(Boolean)&nbsp;request.getAttribute(LOGOUT_SESSION_REQUEST_ATTRIBUTE_NAME);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">152</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">153</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">154</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;@Override</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">147</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">155</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;cleanSubject(MessageInfo&nbsp;messageInfo,&nbsp;Subject&nbsp;subject)&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">148</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">156</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">149</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">157</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">}</td>
+</tr>
+</tbody>
+</table></td>
+</tr> 
+<tr style="background: #fff; color: #333">
+<td style="font-size:13px;font-family:Arial;padding-top:2px;padding-right:10px;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/browse?at=master">forgerock-authn-filter/forg.../session/jwt/ServletJwtSessionModuleTest.java</a></td>
+<td style="font-size:13px;font-family:Arial;padding-top:2px;text-align:right !important;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" nowrap="nowrap" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/commits/2ffa12f2c30701837640f6036c524bb5a0a95c84#forgerock-authn-filter/forgerock-jaspi-modules/forgerock-jaspi-jwt-session-module/src/test/java/org/forgerock/jaspi/modules/session/jwt/ServletJwtSessionModuleTest.java">View changes</a></td>
+</tr> 
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">17</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">17</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">package&nbsp;org.forgerock.jaspi.modules.session.jwt;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">18</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">18</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">19</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">19</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.assertj.core.api.Assertions.assertThat;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">20</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.jaspi.modules.session.jwt.AbstractJwtSessionModule.LOGOUT_SESSION_REQUEST_ATTRIBUTE_NAME;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">20</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">21</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.json.JsonValue.json;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">21</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">22</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.mockito.BDDMockito.given;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">22</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">23</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.mockito.Mockito.*;</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1148</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1149</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//then</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1149</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1150</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//should&nbsp;never&nbsp;get&nbsp;here</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1150</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1151</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1152</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1153</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;@Test(groups&nbsp;=&nbsp;&quot;sessionCookieName&quot;)</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1154</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;shouldLogoutSession()&nbsp;throws&nbsp;Exception&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1155</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1156</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Given</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1157</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageInfo&nbsp;messageInfo&nbsp;=&nbsp;mock(MessageInfo.class);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1158</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject&nbsp;serviceSubject&nbsp;=&nbsp;new&nbsp;Subject();</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1159</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpServletRequest&nbsp;request&nbsp;=&nbsp;mock(HttpServletRequest.class);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1160</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpServletResponse&nbsp;response&nbsp;=&nbsp;mock(HttpServletResponse.class);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1161</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1162</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given(messageInfo.getRequestMessage()).willReturn(request);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1163</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given(messageInfo.getResponseMessage()).willReturn(response);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1164</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given(messageInfo.getMap()).willReturn(new&nbsp;HashMap());</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1165</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given(request.getAttribute(AuthenticationFramework.ATTRIBUTE_AUTH_PRINCIPAL)).willReturn(&quot;PRINCIPAL&quot;);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1166</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given(request.getAttribute(LOGOUT_SESSION_REQUEST_ATTRIBUTE_NAME)).willReturn(true);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1167</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1168</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//When</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1169</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthStatus&nbsp;authStatus&nbsp;=&nbsp;jwtSessionModule.secureResponse(messageInfo,&nbsp;serviceSubject);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1170</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1171</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Then</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1172</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(authStatus).isSameAs(AuthStatus.SEND_SUCCESS);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1173</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ArgumentCaptor&lt;Cookie&gt;&nbsp;cookieCaptor&nbsp;=&nbsp;ArgumentCaptor.forClass(Cookie.class);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1174</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verify(response).addCookie(cookieCaptor.capture());</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1175</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(cookieCaptor.getValue().getName()).isEqualTo(&quot;my-custom-name&quot;);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1176</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(cookieCaptor.getValue().getValue()).isNull();</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1177</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(cookieCaptor.getValue().getMaxAge()).isEqualTo(0);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1178</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(cookieCaptor.getValue().getPath()).isEqualTo(&quot;/&quot;);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1179</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1151</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1180</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">}</td>
+</tr>
+</tbody>
+</table></td>
+</tr> 
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+<table width="100%" class="fullwidth">
+<tbody>
+<tr>
+<td class="chrome-cell footer" bgcolor="#f5f5f5" style="border-top: 1px solid #ccc; padding-left: 20px; height: 20px; padding-top: 10px; padding-bottom: 10px; font-size: 12px; color: #707070; background-color: #f5f5f5; background-position: right 10px center; background-repeat: no-repeat; background-image: url(https://stash.forgerock.org/s/en_US/7e8b796/1/2.4.2/_/download/resources/nl.stefankohler.stash.stash-notification-plugin:email-resources/logo-email-footer.png)"><strong>Hint:</strong> You received this notification because you're watching <a href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-auth-filters/browse" style="color: #3b73af; text-decoration: none">forgerock-auth-filters</a></td>
+</tr>
+</tbody>
+</table>
+<table width="100%" style="width:100%;min-width:100%" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="font-size: 11px;font-family:Arial;color: #666; text-align: center; padding-top: 5px">Sent by <a href="https://marketplace.atlassian.com/plugins/nl.stefankohler.stash.stash-notification-plugin" style="text-decoration: none; color: #666; color: #3b73af; text-decoration: none">Notifyr for Stash</a>, the <a href="http://www.atlassian.com/software/stash/" style="text-decoration: none; color: #666; color: #3b73af; text-decoration: none">Git repository management for enterprise teams</a></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body class="stash-theme fullwidth">
+<table width="100%" class="fullwidth">
+<tbody>
+<tr>
+<td class="body-cell" colspan="3">
+<table width="100%">
+<tbody>
+<tr>
+<td bgcolor="#f5f5f5" class="header" style="background-color: #f5f5f5; border-bottom: 1px solid #ccc; padding-left: 20px; height: 50px; padding-top: 10px; padding-bottom: 10px; font-size: 18px; font-family: Arial"><a href="https://stash.forgerock.org/projects/COMMONS" style="color: #3b73af; text-decoration: none; font-size: 17px; font-weight: bold; padding-bottom: 10px">Commons</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-script/browse" style="color: #3b73af; text-decoration: none; font-size: 17px; font-weight: bold; padding-bottom: 10px">forgerock-script</a><br />
+<div style="margin: 0; padding: 0; margin-top: 3px">
+Laszlo Hordos has 
+<span class="il">pushed changes</span> to: 'master' 
+</div></td>
+</tr>
+<tr>
+<td>
+<table border="0" width="100%" style="width:100%;min-width:100%">
+<tbody>
+<tr>
+<td style="padding-right:10px;font-size:13px;font-family:Arial" valign="top" nowrap="nowrap"><a href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-script/commits/4f80ecea9ef9c4f9e1166bbddac572c6c9eb2f70" style="text-decoration: none; color: #3c78b5;font-family: monospace;; color: #3b73af; text-decoration: none">4f80ecea9ef</a></td>
+<td width="100%" style="width:100%;min-width:100%;padding-right:10px;font-size:13px;font-family:Arial" valign="top">Return with callback closure result</td>
+<td nowrap="nowrap" valign="top" style="font-size:13px;font-family:Arial;text-align:right;"><time title="11 December 2015 03:26 PM" datetime="2015-12-11T15:26:35+0000" class="deprecated">11 Dec 2015</time></td>
+</tr>
+<tr>
+<td></td>
+<td colspan="2">
+<table class="aui" style="border-collapse: collapse; margin: 20px 0; width: 100%; margin-top: 5px">
+<tbody>
+<tr style="background: #fff; color: #333">
+<td style="font-size:13px;font-family:Arial;padding-top:2px;padding-right:10px;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-script/browse?at=master">script-groovy/src/main/java.../forgerock/script/groovy/FunctionClosure.java</a></td>
+<td style="font-size:13px;font-family:Arial;padding-top:2px;text-align:right !important;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc" nowrap="nowrap" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-script/commits/4f80ecea9ef9c4f9e1166bbddac572c6c9eb2f70#script-groovy/src/main/java/org/forgerock/script/groovy/FunctionClosure.java">View changes</a></td>
+</tr> 
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">/*</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">2</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">2</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*&nbsp;DO&nbsp;NOT&nbsp;REMOVE&nbsp;COPYRIGHT&nbsp;NOTICES&nbsp;OR&nbsp;THIS&nbsp;HEADER.</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">3</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">3</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">4</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2012&nbsp;ForgeRock&nbsp;AS.&nbsp;All&nbsp;rights&nbsp;reserved.</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">4</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2012-2015&nbsp;ForgeRock&nbsp;AS.&nbsp;All&nbsp;rights&nbsp;reserved.</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">5</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">5</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">6</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">6</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*&nbsp;The&nbsp;contents&nbsp;of&nbsp;this&nbsp;file&nbsp;are&nbsp;subject&nbsp;to&nbsp;the&nbsp;terms</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">7</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">7</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*&nbsp;of&nbsp;the&nbsp;Common&nbsp;Development&nbsp;and&nbsp;Distribution&nbsp;License</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">33</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">33</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;java.util.Arrays;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">34</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">34</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">35</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">35</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">/**</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">36</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*&nbsp;A&nbsp;NAME&nbsp;does&nbsp;...</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">37</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">38</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*&nbsp;@author&nbsp;Laszlo&nbsp;Hordos</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">36</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">39</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">37</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;*/</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">40</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">38</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">public&nbsp;class&nbsp;FunctionClosure&nbsp;extends&nbsp;Closure&lt;JsonValue&gt;&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">41</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">39</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">62</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">60</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(nativeClosure&nbsp;instanceof&nbsp;FunctionClosure)&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">63</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">61</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callbackFunction&nbsp;=&nbsp;((FunctionClosure)&nbsp;nativeClosure).function;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">64</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">62</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">65</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callbackFunction&nbsp;=&nbsp;new&nbsp;Function&lt;Void&gt;()&nbsp;{</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">63</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callbackFunction&nbsp;=&nbsp;new&nbsp;Function&lt;Object&gt;()&nbsp;{</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">66</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">64</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">67</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Void&nbsp;call(final&nbsp;Parameter&nbsp;scope0,&nbsp;final&nbsp;Function&lt;?&gt;&nbsp;callback,</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">65</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Object&nbsp;call(final&nbsp;Parameter&nbsp;scope0,&nbsp;final&nbsp;Function&lt;?&gt;&nbsp;callback,</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">68</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">66</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Object...&nbsp;arguments)&nbsp;throws&nbsp;ResourceException,</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">69</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">67</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NoSuchMethodException&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">70</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">68</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">77</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">75</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;params[i]&nbsp;=&nbsp;null;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">78</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">76</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">79</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">77</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">80</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">81</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nativeClosure.call(params);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">82</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(Exception&nbsp;e)&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">83</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.printStackTrace();</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">84</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;do&nbsp;something</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">85</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">86</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;null;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">78</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;nativeClosure.call(params);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">87</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">79</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">88</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">80</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">89</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">81</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+</tbody>
+</table></td>
+</tr> 
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+<table width="100%" class="fullwidth">
+<tbody>
+<tr>
+<td class="chrome-cell footer" bgcolor="#f5f5f5" style="border-top: 1px solid #ccc; padding-left: 20px; height: 20px; padding-top: 10px; padding-bottom: 10px; font-size: 12px; color: #707070; background-color: #f5f5f5; background-position: right 10px center; background-repeat: no-repeat; background-image: url(https://stash.forgerock.org/s/en_US/7e8b796/134/2.4.2/_/download/resources/nl.stefankohler.stash.stash-notification-plugin:email-resources/logo-email-footer.png)"><strong>Hint:</strong> You received this notification because you're watching <a href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-script/browse" style="color: #3b73af; text-decoration: none">forgerock-script</a></td>
+</tr>
+</tbody>
+</table>
+<table width="100%" style="width:100%;min-width:100%" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="font-size: 11px;font-family:Arial;color: #666; text-align: center; padding-top: 5px">Sent by <a href="https://marketplace.atlassian.com/plugins/nl.stefankohler.stash.stash-notification-plugin" style="text-decoration: none; color: #666; color: #3b73af; text-decoration: none">Notifyr for Stash</a>, the <a href="http://www.atlassian.com/software/stash/" style="text-decoration: none; color: #666; color: #3b73af; text-decoration: none">Git repository management for enterprise teams</a></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

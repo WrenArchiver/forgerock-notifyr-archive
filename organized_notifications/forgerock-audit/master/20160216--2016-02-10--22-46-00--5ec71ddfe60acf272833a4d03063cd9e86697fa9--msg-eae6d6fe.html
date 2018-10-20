@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body class="stash-theme fullwidth">
+<table width="100%" class="fullwidth">
+<tbody>
+<tr>
+<td class="body-cell" colspan="3">
+<table width="100%">
+<tbody>
+<tr>
+<td bgcolor="#f5f5f5" class="header" style="background-color: #f5f5f5; border-bottom: 1px solid #ccc; padding-left: 20px; height: 50px; padding-top: 10px; padding-bottom: 10px; font-size: 18px; font-family: Arial"><a href="https://stash.forgerock.org/projects/COMMONS" style="color: #3b73af; text-decoration: none; font-size: 17px; font-weight: bold; padding-bottom: 10px">Commons</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/browse" style="color: #3b73af; text-decoration: none; font-size: 17px; font-weight: bold; padding-bottom: 10px">forgerock-audit</a><br />
+<div style="margin: 0; padding: 0; margin-top: 3px">
+Travis Haagen has 
+<span class="il">pushed changes</span> to: 'master' 
+</div></td>
+</tr>
+<tr>
+<td>
+<table border="0" width="100%" style="width:100%;min-width:100%">
+<tbody>
+<tr>
+<td style="padding-right:10px;font-size:13px;font-family:Arial" valign="top" nowrap="nowrap"><a href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/commits/5ec71ddfe60acf272833a4d03063cd9e86697fa9" style="text-decoration: none; color: #3c78b5;font-family: monospace;; color: #3b73af; text-decoration: none">5ec71ddfe60</a></td>
+<td width="100%" style="width:100%;min-width:100%;padding-right:10px;font-size:13px;font-family:Arial" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://bugster.forgerock.org/jira/browse/CAUD-304">CAUD-304</a> Elasticsearch Handler: replace use of JsonValue.toString()</td>
+<td nowrap="nowrap" valign="top" style="font-size:13px;font-family:Arial;text-align:right;"><time title="10 February 2016 10:46 PM" datetime="2016-02-10T22:46:00+0000" class="deprecated">10 Feb 2016</time></td>
+</tr>
+<tr>
+<td></td>
+<td colspan="2">
+<table class="aui" style="border-collapse: collapse; margin: 20px 0; width: 100%; margin-top: 5px">
+<tbody>
+<tr style="background: #fff; color: #333">
+<td style="font-size:13px;font-family:Arial;padding-top:2px;padding-right:10px;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/browse?at=master">forgerock-audit-handler-ela...ticsearch/ElasticsearchAuditEventHandler.java</a></td>
+<td style="font-size:13px;font-family:Arial;padding-top:2px;text-align:right !important;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc" nowrap="nowrap" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/commits/5ec71ddfe60acf272833a4d03063cd9e86697fa9#forgerock-audit-handler-elasticsearch/src/main/java/org/forgerock/audit/handlers/elasticsearch/ElasticsearchAuditEventHandler.java">View changes</a></td>
+</tr> 
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">17</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">17</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">18</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">18</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.audit.handlers.elasticsearch.ElasticsearchAuditEventHandlerConfiguration.ConnectionConfiguration;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">19</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">19</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.audit.handlers.elasticsearch.ElasticsearchAuditEventHandlerConfiguration.IndexMappingConfiguration;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">20</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.http.util.Json.readJson;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">20</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.audit.handlers.elasticsearch.ElasticsearchUtil.objectMapper;</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">21</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">21</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.json.JsonValue.field;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">22</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">22</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.json.JsonValue.json;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">23</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">23</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">import&nbsp;static&nbsp;org.forgerock.json.JsonValue.object;</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">204</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">204</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">205</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">205</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">206</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">206</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;the&nbsp;original&nbsp;audit&nbsp;JSON&nbsp;is&nbsp;under&nbsp;_source,&nbsp;and&nbsp;we&nbsp;also&nbsp;add&nbsp;back&nbsp;the&nbsp;_id</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">207</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JsonValue&nbsp;jsonValue&nbsp;=&nbsp;json(readJson(response.getEntity().toString()));</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">207</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JsonValue&nbsp;jsonValue&nbsp;=&nbsp;json(response.getEntity().getJson());</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">208</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">208</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonValue&nbsp;=&nbsp;ElasticsearchUtil.denormalizeJson(jsonValue.get(SOURCE));</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">209</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">209</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonValue.put(FIELD_CONTENT_ID,&nbsp;resourceId);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">210</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">210</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;newResourceResponse(resourceId,&nbsp;null,&nbsp;jsonValue).asPromise();</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">244</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">244</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;_id&nbsp;is&nbsp;a&nbsp;protected&nbsp;Elasticsearch&nbsp;field,&nbsp;so&nbsp;read&nbsp;it&nbsp;and&nbsp;remove&nbsp;it</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">245</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">245</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceId&nbsp;=&nbsp;event.get(FIELD_CONTENT_ID).asString();</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">246</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">246</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event.remove(FIELD_CONTENT_ID);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">247</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;jsonPayload&nbsp;=&nbsp;ElasticsearchUtil.normalizeJson(event).toString();</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">247</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">248</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;JsonValue&nbsp;normalizedEvent&nbsp;=&nbsp;ElasticsearchUtil.normalizeJson(event);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">249</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;jsonPayload&nbsp;=&nbsp;objectMapper.writeValueAsString(normalizedEvent.getObject());</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">248</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">250</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event.put(FIELD_CONTENT_ID,&nbsp;resourceId);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">249</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">251</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">250</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">252</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Request&nbsp;request&nbsp;=&nbsp;createRequest(PUT,&nbsp;buildEventUri(topic,&nbsp;resourceId),&nbsp;jsonPayload);</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">269</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">271</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;_id&nbsp;is&nbsp;a&nbsp;protected&nbsp;Elasticsearch&nbsp;field</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">270</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">272</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;resourceId&nbsp;=&nbsp;event.get(FIELD_CONTENT_ID).asString();</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">271</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">273</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event.remove(FIELD_CONTENT_ID);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">272</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;jsonPayload&nbsp;=&nbsp;ElasticsearchUtil.normalizeJson(event).toString();</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">274</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;JsonValue&nbsp;normalizedEvent&nbsp;=&nbsp;ElasticsearchUtil.normalizeJson(event);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">275</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;jsonPayload&nbsp;=&nbsp;objectMapper.writeValueAsString(normalizedEvent.getObject());</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">273</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">276</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">274</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">277</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;newlines&nbsp;have&nbsp;special&nbsp;significance&nbsp;in&nbsp;the&nbsp;Bulk&nbsp;API</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">275</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">278</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">276</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">279</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payload.append(&quot;{&nbsp;\&quot;index\&quot;&nbsp;:&nbsp;{&nbsp;\&quot;_type\&quot;&nbsp;:&nbsp;&quot;)</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">277</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.append(ElasticsearchUtil.objectMapper.writeValueAsString(topic))</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">280</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.append(objectMapper.writeValueAsString(topic))</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">278</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">281</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.append(&quot;,&nbsp;\&quot;_id\&quot;&nbsp;:&nbsp;&quot;)</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">279</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.append(ElasticsearchUtil.objectMapper.writeValueAsString(resourceId))</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">282</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.append(objectMapper.writeValueAsString(resourceId))</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">280</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">283</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.append(&quot;&nbsp;}&nbsp;}\n&quot;)</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">281</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">284</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.append(jsonPayload)</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">282</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">285</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.append('\n');</td>
+</tr>
+</tbody>
+</table></td>
+</tr> 
+<tr style="background: #fff; color: #333">
+<td style="font-size:13px;font-family:Arial;padding-top:2px;padding-right:10px;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/browse?at=master">forgerock-audit-handler-ela...handlers/elasticsearch/ElasticsearchUtil.java</a></td>
+<td style="font-size:13px;font-family:Arial;padding-top:2px;text-align:right !important;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" nowrap="nowrap" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/commits/5ec71ddfe60acf272833a4d03063cd9e86697fa9#forgerock-audit-handler-elasticsearch/src/main/java/org/forgerock/audit/handlers/elasticsearch/ElasticsearchUtil.java">View changes</a></td>
+</tr> 
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">154</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">154</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;@VisibleForTesting</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">155</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">155</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;static&nbsp;JsonValue&nbsp;replaceKeyPeriodsWithUnderscores(final&nbsp;JsonValue&nbsp;value,</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">156</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">156</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Map&lt;String,&nbsp;Object&gt;&nbsp;normalized)&nbsp;throws&nbsp;IOException&nbsp;{</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">157</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;s&nbsp;=&nbsp;value.toString();</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">157</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;s&nbsp;=&nbsp;objectMapper.writeValueAsString(value.getObject());</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">158</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">158</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Matcher&nbsp;m&nbsp;=&nbsp;JSON_KEY_WITH_PERIOD_CHAR_PATTERN.matcher(s);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">159</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">159</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(m.find())&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">160</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">160</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;fieldNames&nbsp;contains&nbsp;metadata&nbsp;for&nbsp;de-normalization</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">196</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">196</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;static&nbsp;JsonValue&nbsp;restoreKeyPeriods(final&nbsp;JsonValue&nbsp;value,&nbsp;final&nbsp;JsonValue&nbsp;nomalized)&nbsp;throws&nbsp;IOException&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">197</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">197</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;JsonValue&nbsp;fieldNames&nbsp;=&nbsp;nomalized.get(FIELD_NAMES_FIELD);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">198</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">198</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(fieldNames.isNotNull())&nbsp;{</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">199</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;s&nbsp;=&nbsp;value.toString();</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">199</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;s&nbsp;=&nbsp;objectMapper.writeValueAsString(value.getObject());</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">200</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">200</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Matcher&nbsp;m&nbsp;=&nbsp;JSON_KEY_WITH_UNDERSCORE_CHAR_PATTERN.matcher(s);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">201</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">201</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(m.find())&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">202</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">202</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;int&nbsp;n&nbsp;=&nbsp;s.length();</td>
+</tr>
+</tbody>
+</table></td>
+</tr> 
+<tr style="background: #fff; color: #333">
+<td style="font-size:13px;font-family:Arial;padding-top:2px;padding-right:10px;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/browse?at=master">forgerock-audit-handler-ela...earch/ElasticsearchAuditEventHandlerTest.java</a></td>
+<td style="font-size:13px;font-family:Arial;padding-top:2px;text-align:right !important;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" nowrap="nowrap" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/commits/5ec71ddfe60acf272833a4d03063cd9e86697fa9#forgerock-audit-handler-elasticsearch/src/test/java/org/forgerock/audit/handlers/elasticsearch/ElasticsearchAuditEventHandlerTest.java">View changes</a></td>
+</tr> 
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">74</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">74</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;int&nbsp;TOTAL_RESULTS&nbsp;=&nbsp;1;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">75</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">75</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;String&nbsp;ID&nbsp;=&nbsp;&quot;id&quot;;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">76</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">76</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">77</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;ObjectMapper&nbsp;objectMapper&nbsp;=&nbsp;new&nbsp;ObjectMapper();</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">78</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">77</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">79</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;String&nbsp;authEventBeforeNormalization;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">78</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">80</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;String&nbsp;authEventBatchPayload;</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">79</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">81</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">80</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">82</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;@BeforeTest</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">81</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">83</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;beforeTest()&nbsp;throws&nbsp;Exception&nbsp;{</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">82</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authEventBeforeNormalization&nbsp;=&nbsp;resourceAsJsonValue(</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">83</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RESOURCE_PATH&nbsp;+&nbsp;&quot;authEventBeforeNormalization.json&quot;).toString();</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">84</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authEventBeforeNormalization&nbsp;=&nbsp;objectMapper.writeValueAsString(</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">85</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceAsJsonValue(RESOURCE_PATH&nbsp;+&nbsp;&quot;authEventBeforeNormalization.json&quot;).getObject());</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">84</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">86</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authEventBatchPayload&nbsp;=&nbsp;resourceAsString(RESOURCE_PATH&nbsp;+&nbsp;&quot;authEventBatchPayload.txt&quot;);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">85</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">87</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">86</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">88</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">174</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">176</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;given</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">175</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">177</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;JsonValue&nbsp;event&nbsp;=&nbsp;resourceAsJsonValue(RESOURCE_PATH&nbsp;+&nbsp;&quot;authEventReadFromElasticsearch.json&quot;);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">176</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">178</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;resourceId&nbsp;=&nbsp;event.get(new&nbsp;JsonPointer(&quot;_id&quot;)).asString();</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">177</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Response&nbsp;response&nbsp;=&nbsp;createClientResponse(Status.OK,&nbsp;event.toString());</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">179</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Response&nbsp;response&nbsp;=&nbsp;createClientResponse(Status.OK,&nbsp;objectMapper.writeValueAsString(event.getObject()));</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">178</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">180</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">179</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">181</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Promise&lt;Response,&nbsp;NeverThrowsException&gt;&nbsp;promise&nbsp;=&nbsp;mock(Promise.class);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">180</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">182</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;when(promise.get()).thenReturn(response);</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">189</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">191</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">190</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">192</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;then</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">191</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">193</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(resourceResponse.getId()).isEqualTo(event.get(&quot;_id&quot;).asString());</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">192</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(resourceResponse.getContent().toString()).isEqualTo(authEventBeforeNormalization);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">194</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(objectMapper.writeValueAsString(resourceResponse.getContent().getObject()))</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">195</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.isEqualTo(authEventBeforeNormalization);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">193</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">196</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">194</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">197</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">195</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">198</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;@Test</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">233</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">236</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">234</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">237</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;then</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">235</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">238</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(resourceResponse.getId()).isEqualTo(resourceId);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">236</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(resourceResponse.getContent().toString()).isEqualTo(authEventBeforeNormalization);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">239</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(objectMapper.writeValueAsString(resourceResponse.getContent().getObject()))</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">240</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.isEqualTo(authEventBeforeNormalization);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">237</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">241</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">238</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">242</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">239</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">243</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;@Test</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">260</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">264</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">261</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">265</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;then</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">262</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">266</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(resourceResponse.getId()).isEqualTo(resourceId);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">263</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(resourceResponse.getContent().toString()).isEqualTo(authEventBeforeNormalization);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">267</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(objectMapper.writeValueAsString(resourceResponse.getContent().getObject()))</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">268</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.isEqualTo(authEventBeforeNormalization);</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">264</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">269</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">265</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">270</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">266</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">271</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;@Test</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">353</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">358</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">354</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">359</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;JsonValue&nbsp;resourceAsJsonValue(final&nbsp;String&nbsp;resourcePath)&nbsp;throws&nbsp;Exception&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">355</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">360</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;(final&nbsp;InputStream&nbsp;configStream&nbsp;=&nbsp;getClass().getResourceAsStream(resourcePath))&nbsp;{</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">356</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;JsonValue(new&nbsp;ObjectMapper().readValue(configStream,&nbsp;Map.class));</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">361</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;JsonValue(objectMapper.readValue(configStream,&nbsp;Map.class));</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">357</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">362</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">358</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">363</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">359</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">364</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table></td>
+</tr> 
+<tr style="background: #fff; color: #333">
+<td style="font-size:13px;font-family:Arial;padding-top:2px;padding-right:10px;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/browse?at=master">forgerock-audit-handler-ela...lers/elasticsearch/ElasticsearchUtilTest.java</a></td>
+<td style="font-size:13px;font-family:Arial;padding-top:2px;text-align:right !important;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" nowrap="nowrap" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/commits/5ec71ddfe60acf272833a4d03063cd9e86697fa9#forgerock-audit-handler-elasticsearch/src/test/java/org/forgerock/audit/handlers/elasticsearch/ElasticsearchUtilTest.java">View changes</a></td>
+</tr> 
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">35</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">35</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;MapEntry&lt;String,&nbsp;String&gt;&nbsp;FIELD_NAME_PAIR&nbsp;=</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">36</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">36</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MapEntry.entry(&quot;org_forgerock_authentication_principal&quot;,&nbsp;&quot;org.forgerock.authentication.principal&quot;);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">37</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">37</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">38</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;ObjectMapper&nbsp;objectMapper&nbsp;=&nbsp;new&nbsp;ObjectMapper();</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">39</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">38</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">40</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;/**</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">39</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">41</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Test&nbsp;that&nbsp;all&nbsp;periods&nbsp;in&nbsp;JSON&nbsp;keys&nbsp;will&nbsp;be&nbsp;replaced&nbsp;by&nbsp;underscores,&nbsp;as&nbsp;required&nbsp;by&nbsp;Elasticsearch.</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">40</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">42</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">50</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">52</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;JsonValue&nbsp;result&nbsp;=&nbsp;replaceKeyPeriodsWithUnderscores(beforeNormalization,&nbsp;normalized);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">51</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">53</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">52</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">54</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;then</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">53</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(result.toString()).isEqualTo(afterNormalization.toString());</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">55</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(objectMapper.writeValueAsString(result.getObject()))</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">56</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.isEqualTo(objectMapper.writeValueAsString(afterNormalization.getObject()));</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">54</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">57</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(normalized).containsKey(ElasticsearchUtil.FIELD_NAMES_FIELD);</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">55</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">58</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat((Map&lt;String,&nbsp;Object&gt;)&nbsp;normalized.get(ElasticsearchUtil.FIELD_NAMES_FIELD))</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">56</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">59</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.containsExactly(FIELD_NAME_PAIR);</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">71</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">74</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;JsonValue&nbsp;result&nbsp;=&nbsp;restoreKeyPeriods(afterNormalization,&nbsp;JsonValue.json(normalized));</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">72</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">75</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">73</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">76</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;then</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">74</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(result.toString()).isEqualTo(beforeNormalization.toString());</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">77</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertThat(objectMapper.writeValueAsString(result.getObject()))</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">78</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.isEqualTo(objectMapper.writeValueAsString(beforeNormalization.getObject()));</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">75</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">79</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">76</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">80</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0"></td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">77</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">81</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;JsonValue&nbsp;resourceAsJsonValue(final&nbsp;String&nbsp;resourcePath)&nbsp;throws&nbsp;Exception&nbsp;{</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">78</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">82</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;(final&nbsp;InputStream&nbsp;configStream&nbsp;=&nbsp;getClass().getResourceAsStream(resourcePath))&nbsp;{</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">79</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;JsonValue(new&nbsp;ObjectMapper().readValue(configStream,&nbsp;Map.class));</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">83</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;JsonValue(objectMapper.readValue(configStream,&nbsp;Map.class));</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">80</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">84</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">81</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">85</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+</tr>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">82</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">86</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">}</td>
+</tr>
+</tbody>
+</table></td>
+</tr> 
+<tr style="background: #fff; color: #333">
+<td style="font-size:13px;font-family:Arial;padding-top:2px;padding-right:10px;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/browse?at=master">forgerock-audit-handler-ela...dlers/elasticsearch/authEventBatchPayload.txt</a></td>
+<td style="font-size:13px;font-family:Arial;padding-top:2px;text-align:right !important;margin:0;; padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc" nowrap="nowrap" valign="top"><a style="text-decoration: none; color: #3c78b5; color: #3b73af; text-decoration: none" href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/commits/5ec71ddfe60acf272833a4d03063cd9e86697fa9#forgerock-audit-handler-elasticsearch/src/test/resources/org/forgerock/audit/handlers/elasticsearch/authEventBatchPayload.txt">View changes</a></td>
+</tr> 
+<tr class="diff-hunk" style="background: #fff; color: #333">
+<td colspan="2" style="padding: 7px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #ccc">
+<table class="segmentlines CONTEXT" style="width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">1</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em"></td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">{&nbsp;&quot;index&quot;&nbsp;:&nbsp;{&nbsp;&quot;_type&quot;&nbsp;:&nbsp;&quot;authentication&quot;,&nbsp;&quot;_id&quot;&nbsp;:&nbsp;&quot;177c080f-5f21-467e-bf1a-26c54d62f355-215&quot;&nbsp;}&nbsp;}</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines REMOVED" style="border-top-color: #fee8e9; background-color: #fee8e9; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">2</td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">-</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">{&nbsp;&quot;context&quot;:&nbsp;{&nbsp;&quot;component&quot;:&nbsp;&quot;repo/internal/user&quot;,&nbsp;&quot;roles&quot;:&nbsp;[&nbsp;&quot;openidm-admin&quot;,&nbsp;&quot;openidm-authorized&quot;&nbsp;],&nbsp;&quot;ipAddress&quot;:&nbsp;&quot;0:0:0:0:0:0:0:1&quot;,&nbsp;&quot;id&quot;:&nbsp;&quot;openidm-admin&quot;&nbsp;},&nbsp;&quot;entries&quot;:&nbsp;[&nbsp;{&nbsp;&quot;moduleId&quot;:&nbsp;&quot;JwtSession&quot;,&nbsp;&quot;result&quot;:&nbsp;&quot;FAILED&quot;,&nbsp;&quot;reason&quot;:&nbsp;{&nbsp;&nbsp;},&nbsp;&quot;info&quot;:&nbsp;{&nbsp;&nbsp;}&nbsp;},&nbsp;{&nbsp;&quot;moduleId&quot;:&nbsp;&quot;STATIC_USER&quot;,&nbsp;&quot;result&quot;:&nbsp;&quot;FAILED&quot;,&nbsp;&quot;reason&quot;:&nbsp;{&nbsp;&nbsp;},&nbsp;&quot;info&quot;:&nbsp;{&nbsp;&quot;org_forgerock_authentication_principal&quot;:&nbsp;&quot;openidm-admin&quot;&nbsp;}&nbsp;},&nbsp;{&nbsp;&quot;moduleId&quot;:&nbsp;&quot;MANAGED_USER&quot;,&nbsp;&quot;result&quot;:&nbsp;&quot;FAILED&quot;,&nbsp;&quot;reason&quot;:&nbsp;{&nbsp;&nbsp;},&nbsp;&quot;info&quot;:&nbsp;{&nbsp;&quot;org_forgerock_authentication_principal&quot;:&nbsp;&quot;openidm-admin&quot;&nbsp;}&nbsp;},&nbsp;{&nbsp;&quot;moduleId&quot;:&nbsp;&quot;INTERNAL_USER&quot;,&nbsp;&quot;result&quot;:&nbsp;&quot;SUCCESSFUL&quot;,&nbsp;&quot;info&quot;:&nbsp;{&nbsp;&quot;org_forgerock_authentication_principal&quot;:&nbsp;&quot;openidm-admin&quot;&nbsp;}&nbsp;}&nbsp;],&nbsp;&quot;principal&quot;:&nbsp;[&nbsp;&quot;openidm-admin&quot;&nbsp;],&nbsp;&quot;result&quot;:&nbsp;&quot;SUCCESSFUL&quot;,&nbsp;&quot;userId&quot;:&nbsp;&quot;openidm-admin&quot;,&nbsp;&quot;transactionId&quot;:&nbsp;&quot;177c080f-5f21-467e-bf1a-26c54d62f355-207&quot;,&nbsp;&quot;timestamp&quot;:&nbsp;&quot;2016-01-28T23:09:57.225Z&quot;,&nbsp;&quot;eventName&quot;:&nbsp;&quot;authentication&quot;,&nbsp;&quot;trackingIds&quot;:&nbsp;[&nbsp;&quot;4043c668-57c2-4cd4-a48e-3de49db68e7a&quot;&nbsp;],&nbsp;&quot;_normalized&quot;:&nbsp;{&nbsp;&quot;fieldNames&quot;:&nbsp;{&nbsp;&quot;org_forgerock_authentication_principal&quot;:&nbsp;&quot;org.forgerock.authentication.principal&quot;&nbsp;}&nbsp;}&nbsp;}</td>
+</tr>
+</tbody>
+</table>
+<table class="segmentlines ADDED" style="border-top-color: #dfd; background-color: #dfd; width: 100%">
+<tbody>
+<tr>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em"></td>
+<td class="line number" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 2em">2</td>
+<td class="line marker" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0; width: 1em">+</td>
+<td class="line" style="font-family: monospace, 'Courier New', Courier; font-size: 12px; margin: 0">{&quot;context&quot;:{&quot;component&quot;:&quot;repo/internal/user&quot;,&quot;roles&quot;:[&quot;openidm-admin&quot;,&quot;openidm-authorized&quot;],&quot;ipAddress&quot;:&quot;0:0:0:0:0:0:0:1&quot;,&quot;id&quot;:&quot;openidm-admin&quot;},&quot;entries&quot;:[{&quot;moduleId&quot;:&quot;JwtSession&quot;,&quot;result&quot;:&quot;FAILED&quot;,&quot;reason&quot;:{},&quot;info&quot;:{}},{&quot;moduleId&quot;:&quot;STATIC_USER&quot;,&quot;result&quot;:&quot;FAILED&quot;,&quot;reason&quot;:{},&quot;info&quot;:{&quot;org_forgerock_authentication_principal&quot;:&quot;openidm-admin&quot;}},{&quot;moduleId&quot;:&quot;MANAGED_USER&quot;,&quot;result&quot;:&quot;FAILED&quot;,&quot;reason&quot;:{},&quot;info&quot;:{&quot;org_forgerock_authentication_principal&quot;:&quot;openidm-admin&quot;}},{&quot;moduleId&quot;:&quot;INTERNAL_USER&quot;,&quot;result&quot;:&quot;SUCCESSFUL&quot;,&quot;info&quot;:{&quot;org_forgerock_authentication_principal&quot;:&quot;openidm-admin&quot;}}],&quot;principal&quot;:[&quot;openidm-admin&quot;],&quot;result&quot;:&quot;SUCCESSFUL&quot;,&quot;userId&quot;:&quot;openidm-admin&quot;,&quot;transactionId&quot;:&quot;177c080f-5f21-467e-bf1a-26c54d62f355-207&quot;,&quot;timestamp&quot;:&quot;2016-01-28T23:09:57.225Z&quot;,&quot;eventName&quot;:&quot;authentication&quot;,&quot;trackingIds&quot;:[&quot;4043c668-57c2-4cd4-a48e-3de49db68e7a&quot;],&quot;_normalized&quot;:{&quot;fieldNames&quot;:{&quot;org_forgerock_authentication_principal&quot;:&quot;org.forgerock.authentication.principal&quot;}}}</td>
+</tr>
+</tbody>
+</table></td>
+</tr> 
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+<table width="100%" class="fullwidth">
+<tbody>
+<tr>
+<td class="chrome-cell footer" bgcolor="#f5f5f5" style="border-top: 1px solid #ccc; padding-left: 20px; height: 20px; padding-top: 10px; padding-bottom: 10px; font-size: 12px; color: #707070; background-color: #f5f5f5; background-position: right 10px center; background-repeat: no-repeat; background-image: url(https://stash.forgerock.org/s/en_US/7e8b796/19/2.4.2/_/download/resources/nl.stefankohler.stash.stash-notification-plugin:email-resources/logo-email-footer.png)"><strong>Hint:</strong> You received this notification because you're watching <a href="https://stash.forgerock.org/projects/COMMONS/repos/forgerock-audit/browse" style="color: #3b73af; text-decoration: none">forgerock-audit</a></td>
+</tr>
+</tbody>
+</table>
+<table width="100%" style="width:100%;min-width:100%" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="font-size: 11px;font-family:Arial;color: #666; text-align: center; padding-top: 5px">Sent by <a href="https://marketplace.atlassian.com/plugins/nl.stefankohler.stash.stash-notification-plugin" style="text-decoration: none; color: #666; color: #3b73af; text-decoration: none">Notifyr for Stash</a>, the <a href="http://www.atlassian.com/software/stash/" style="text-decoration: none; color: #666; color: #3b73af; text-decoration: none">Git repository management for enterprise teams</a></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

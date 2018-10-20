@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ 
+<!-- Mirrored from lists.forgerock.org/pipermail/commons/2013-November/000279.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Sep 2018 02:56:27 GMT -->
+<HEAD>
+   <TITLE> [Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:commons%40forgerock.org?Subject=Re:%20Re%3A%20%5BCommons%5D%20%5B1308%5D%0A%20forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/%0A%20resource/PatchOperation.java%3A%20%5BCR-2569%5D%20Added%20type%20checking%20in%0A%20PatchOperation%20constructor%20and%20fixed%20the%20toJsonValue%20to%20set%20the%20field%20value%0A%20to%20a%20string&In-Reply-To=%3C52938DB9.6010001%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000278.html">
+   <LINK REL="Next"  HREF="000269.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string</H1>
+    <B>Chad Kienle</B> 
+    <A HREF="mailto:commons%40forgerock.org?Subject=Re:%20Re%3A%20%5BCommons%5D%20%5B1308%5D%0A%20forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/%0A%20resource/PatchOperation.java%3A%20%5BCR-2569%5D%20Added%20type%20checking%20in%0A%20PatchOperation%20constructor%20and%20fixed%20the%20toJsonValue%20to%20set%20the%20field%20value%0A%20to%20a%20string&In-Reply-To=%3C52938DB9.6010001%40gmail.com%3E"
+       TITLE="[Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string">chad.kienle at forgerock.com
+       </A><BR>
+    <I>Mon Nov 25 17:49:45 GMT 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000278.html">[Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string
+</A></li>
+        <LI>Next message: <A HREF="000269.html">[Commons] [1309] forgerock-script/trunk/script-common/src/main/java/org/forgerock/ script/scope/ResourceFunctions.java: [CR-2569] Implemented the call and patch methods in ResourceFunctions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#279">[ date ]</a>
+              <a href="thread.html#279">[ thread ]</a>
+              <a href="subject.html#279">[ subject ]</a>
+              <a href="author.html#279">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Matt,
+
+The type validation was in response to Laszlo's comment on the review 
+asking for
+validation on the operation values.  It seemed most logical to include 
+the validation
+in the PatchOperation constructor.  I also agree that a strongly-typed 
+enum would
+be even better.  However, like yourself, I guess now I'm not completely 
+sure that
+these four operation types are sufficient for all cases.  I was not 
+aware of the &quot;move&quot;
+and &quot;copy&quot; types and don't have much insight into their specific use cases.
+
+-Chad
+
+
+On 11/25/13, 8:41 AM, Brendan Miller wrote:
+&gt;<i> I also wondered why the operation was not a strongly-typed enum.  I
+</I>&gt;<i> didn't find the additional PaulB IETF draft operations compelling, but
+</I>&gt;<i> it does beg whether we'll need to extend this some day.  Does using
+</I>&gt;<i> an enum implementation totally box us in?  Can we not extend the enum
+</I>&gt;<i> in the future.  In the interim, is there a way to degrade nicely if a
+</I>&gt;<i> value is encountered that perhasp commons is not &quot;ready&quot; for?
+</I>&gt;<i>
+</I>&gt;<i> Brendan
+</I>&gt;<i>
+</I>&gt;<i> On Mon, Nov 25, 2013 at 04:19:43PM +0100, Matthew Swift wrote:
+</I>&gt;&gt;<i> Hi Chad,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Originally when I wrote the PatchOperation class I was unsure whether the
+</I>&gt;&gt;<i> operation types &quot;add&quot;, &quot;remove&quot;, &quot;replace&quot;, and &quot;increment&quot; would be
+</I>&gt;&gt;<i> sufficient for all applications. They are sufficient for Rest2LDAP, but I
+</I>&gt;&gt;<i> noticed that Paul B's patch internet draft included some additional
+</I>&gt;&gt;<i> operations, such as &quot;move&quot; and &quot;copy&quot;. Therefore, to make this class
+</I>&gt;&gt;<i> extensible, I opted to *not* use an enum and instead go for the weaker
+</I>&gt;&gt;<i> string based design that we have at the moment.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This change suggests that perhaps the current four operation types (&quot;add&quot;,
+</I>&gt;&gt;<i> &quot;remove&quot;, &quot;replace&quot;, and &quot;increment&quot;) are sufficient after all. Do you
+</I>&gt;&gt;<i> agree? If so then I think it would be reasonable to convert this class to
+</I>&gt;&gt;<i> an enum based implementation.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Let me know what you think.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Matt
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Fri, Nov 22, 2013 at 7:57 PM, &lt;<A HREF="https://lists.forgerock.org/mailman/listinfo/commons">noreply at forgerock.org</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>    Revision 1308 &lt;<A HREF="http://sources.forgerock.org/changelog/commons/?cs=1308">http://sources.forgerock.org/changelog/commons/?cs=1308</A>&gt;
+</I>&gt;&gt;&gt;<i> Author chad.kienle Date 2013-11-22 18:57:05 +0000 (Fri, 22 Nov 2013) Log
+</I>&gt;&gt;&gt;<i> Message
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Modified Paths
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     -
+</I>&gt;&gt;&gt;<i>     forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/resource/PatchOperation.java&lt;#142812c4e4f1483f_forgerockresttrunkjsonresourcesrcmainjavaorgforgerockjsonresourcePatchOperationjava&gt;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>   Diff
+</I>&gt;&gt;&gt;<i> Modified:
+</I>&gt;&gt;&gt;<i> forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/resource/PatchOperation.java
+</I>&gt;&gt;&gt;<i> (1307 =&gt; 1308)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> --- forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/resource/PatchOperation.java	2013-11-22 09:37:34 UTC (rev 1307)
+</I>&gt;&gt;&gt;<i> +++ forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/resource/PatchOperation.java	2013-11-22 18:57:05 UTC (rev 1308)@@ -434,6 +434,7 @@         this.operation = checkNotNull(operation, &quot;Cannot instantiate PatchOperation with null operation value&quot;);         this.field = checkNotNull(field, &quot;Cannot instantiate PatchOperation with null field value&quot;);         this.value = value != null ? value : new JsonValue(null);+        checkOperationType();         checkOperationValue();     } @@ -509,7 +510,7 @@     public JsonValue toJsonValue() {         final JsonValue json = new JsonValue(new LinkedHashMap&lt;String, Object&gt;(3));         json.put(FIELD_OPERATION, operation);-        json.put(FIELD_FIELD, field);+        json.put(FIELD_FIELD, field.toString());         if (!value.isNull()) {             json.put(FIELD_VALUE, value.getObject());         }@@ -533,6 +534,12 @@             }         }     }+
+</I>&gt;&gt;&gt;<i> +    private void checkOperationType() {
+</I>&gt;&gt;&gt;<i> +        if (!isAdd() &amp;&amp; !isRemove() &amp;&amp; !isIncrement() &amp;&amp; !isReplace()) {
+</I>&gt;&gt;&gt;<i> +            throw new IllegalArgumentException(&quot;Invalid patch operation type &quot; + operation);
+</I>&gt;&gt;&gt;<i> +        }
+</I>&gt;&gt;&gt;<i> +    }      private boolean is(final String type) {         return operation == type || operation.equalsIgnoreCase(type);
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>   Copyright (c) by ForgeRock. All rights reserved.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> Commons mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.forgerock.org/mailman/listinfo/commons">Commons at forgerock.org</A>
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.forgerock.org/mailman/listinfo/commons">https://lists.forgerock.org/mailman/listinfo/commons</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000278.html">[Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string
+</A></li>
+	<LI>Next message: <A HREF="000269.html">[Commons] [1309] forgerock-script/trunk/script-common/src/main/java/org/forgerock/ script/scope/ResourceFunctions.java: [CR-2569] Implemented the call and patch methods in ResourceFunctions
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#279">[ date ]</a>
+              <a href="thread.html#279">[ thread ]</a>
+              <a href="subject.html#279">[ subject ]</a>
+              <a href="author.html#279">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.forgerock.org/mailman/listinfo/commons">More information about the Commons
+mailing list</a><br>
+</body>
+<!-- Mirrored from lists.forgerock.org/pipermail/commons/2013-November/000279.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Sep 2018 02:56:27 GMT -->
+</html>

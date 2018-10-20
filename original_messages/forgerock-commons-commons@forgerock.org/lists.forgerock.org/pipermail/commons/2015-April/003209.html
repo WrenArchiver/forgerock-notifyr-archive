@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ 
+<!-- Mirrored from lists.forgerock.org/pipermail/commons/2015-April/003209.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Sep 2018 01:15:52 GMT -->
+<HEAD>
+   <TITLE> [Commons] [3157] forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock /http/protocol/MessageImpl.java: Add `public` modifier to `MessageImpl` in order to allow calling methods through reflection
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:commons%40forgerock.org?Subject=Re:%20Re%3A%20%5BCommons%5D%20%5B3157%5D%0A%20forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock%0A%20/http/protocol/MessageImpl.java%3A%20Add%20%60public%60%20modifier%20to%20%60MessageImpl%60%20in%0A%20order%20to%20allow%20calling%20methods%20through%20reflection&In-Reply-To=%3CetPan.5534b2ff.74845420.a2a5%40myrkr.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="003200.html">
+   <LINK REL="Next"  HREF="003195.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Commons] [3157] forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock /http/protocol/MessageImpl.java: Add `public` modifier to `MessageImpl` in order to allow calling methods through reflection</H1>
+    <B>Guillaume Sauthier</B> 
+    <A HREF="mailto:commons%40forgerock.org?Subject=Re:%20Re%3A%20%5BCommons%5D%20%5B3157%5D%0A%20forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock%0A%20/http/protocol/MessageImpl.java%3A%20Add%20%60public%60%20modifier%20to%20%60MessageImpl%60%20in%0A%20order%20to%20allow%20calling%20methods%20through%20reflection&In-Reply-To=%3CetPan.5534b2ff.74845420.a2a5%40myrkr.local%3E"
+       TITLE="[Commons] [3157] forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock /http/protocol/MessageImpl.java: Add `public` modifier to `MessageImpl` in order to allow calling methods through reflection">guillaume.sauthier at forgerock.com
+       </A><BR>
+    <I>Mon Apr 20 09:04:15 BST 2015</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="003200.html">[Commons] [3157] forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock /http/protocol/MessageImpl.java: Add `public` modifier to `MessageImpl` in order to allow calling methods through reflection
+</A></li>
+        <LI>Next message: <A HREF="003195.html">[Commons] [JIRA] (CREST-253) Demonstrate docs use of example API	descriptor
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3209">[ date ]</a>
+              <a href="thread.html#3209">[ thread ]</a>
+              <a href="subject.html#3209">[ subject ]</a>
+              <a href="author.html#3209">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ok, the use case was: in OpenIG, an Expression like exchange.response.headers['a'] was failing (silently) because the BeanELResolver could not call MessageImpl&lt;Response&gt;.getHeaders() (even if this method is part of a public interface)
+
+
+
+ 	Guillaume Sauthier  
+OpenIG Lead Develope &#160;|&#160; ForgeRock
+t @sauthieg &#160;|&#160; e <A HREF="https://lists.forgerock.org/mailman/listinfo/commons">guillaume.sauthier at forgerock.com</A>  
+skype gsauthier &#160;|&#160; web www.forgerock.com
+On 18 Apr 2015 at 01:29:55, Matthew Swift (<A HREF="https://lists.forgerock.org/mailman/listinfo/commons">matthew.swift at forgerock.com</A>) wrote:
+
+Hi Guillaume,
+
+The commit message doesn't help me understand the motivation (use case) for this change. Should we start making all our classes public so that they can be accessed via reflection? ;-)
+
+Matt
+
+
+On Fri, Apr 17, 2015 at 2:45 PM, &lt;<A HREF="https://lists.forgerock.org/mailman/listinfo/commons">noreply at forgerock.org</A>&gt; wrote:
+Revision
+3157
+Author
+guillaume.sauthier
+Date
+2015-04-17 13:45:41 +0100 (Fri, 17 Apr 2015)
+Log Message
+
+Add `public` modifier to `MessageImpl` in order to allow calling methods through reflection
+Modified Paths
+
+forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock/http/protocol/MessageImpl.java
+Diff
+
+Modified: forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock/http/protocol/MessageImpl.java (3156 =&gt; 3157)
+
+
+--- forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock/http/protocol/MessageImpl.java 2015-04-17 09:23:46 UTC (rev 3156)
++++ forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock/http/protocol/MessageImpl.java 2015-04-17 12:45:41 UTC (rev 3157)
+@@ -26,7 +26,7 @@
+  * @param &lt;T&gt;
+  *            The sub-type of this message.
+  */
+-abstract class MessageImpl&lt;T extends MessageImpl&lt;T&gt;&gt; implements Message {
++public abstract class MessageImpl&lt;T extends MessageImpl&lt;T&gt;&gt; implements Message {
+  
+     /** Message entity body. */
+     private final Entity entity = new Entity(this);
+
+Copyright (c) by ForgeRock. All rights reserved.
+
+_______________________________________________
+Commons mailing list
+<A HREF="https://lists.forgerock.org/mailman/listinfo/commons">Commons at forgerock.org</A>
+<A HREF="https://lists.forgerock.org/mailman/listinfo/commons">https://lists.forgerock.org/mailman/listinfo/commons</A>
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="../attachments/20150420/85b0e0f7/attachment-0001.html">http://lists.forgerock.org/pipermail/commons/attachments/20150420/85b0e0f7/attachment-0001.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="003200.html">[Commons] [3157] forgerock-http-framework/trunk/http-core/src/main/java/org/forgerock /http/protocol/MessageImpl.java: Add `public` modifier to `MessageImpl` in order to allow calling methods through reflection
+</A></li>
+	<LI>Next message: <A HREF="003195.html">[Commons] [JIRA] (CREST-253) Demonstrate docs use of example API	descriptor
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3209">[ date ]</a>
+              <a href="thread.html#3209">[ thread ]</a>
+              <a href="subject.html#3209">[ subject ]</a>
+              <a href="author.html#3209">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.forgerock.org/mailman/listinfo/commons">More information about the Commons
+mailing list</a><br>
+</body>
+<!-- Mirrored from lists.forgerock.org/pipermail/commons/2015-April/003209.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Sep 2018 01:15:53 GMT -->
+</html>

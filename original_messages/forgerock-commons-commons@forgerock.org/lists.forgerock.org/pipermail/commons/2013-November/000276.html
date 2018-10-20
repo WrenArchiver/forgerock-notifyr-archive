@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ 
+<!-- Mirrored from lists.forgerock.org/pipermail/commons/2013-November/000276.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Sep 2018 02:56:26 GMT -->
+<HEAD>
+   <TITLE> [Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string
+   </TITLE>
+   <LINK REL="Index" HREF="index.html" >
+   <LINK REL="made" HREF="mailto:commons%40forgerock.org?Subject=Re:%20Re%3A%20%5BCommons%5D%20%5B1308%5D%0A%20forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/%0A%20resource/PatchOperation.java%3A%20%5BCR-2569%5D%20Added%20type%20checking%20in%0A%20PatchOperation%20constructor%20and%20fixed%20the%20toJsonValue%20to%20set%20the%20field%20value%0A%20to%20a%20string&In-Reply-To=%3CCAOZ_4-A4AtZEteHucH%3D2BruSc%3DAwSS4smmkscoR-zOHfSmtfjg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000268.html">
+   <LINK REL="Next"  HREF="000278.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string</H1>
+    <B>Matthew Swift</B> 
+    <A HREF="mailto:commons%40forgerock.org?Subject=Re:%20Re%3A%20%5BCommons%5D%20%5B1308%5D%0A%20forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/%0A%20resource/PatchOperation.java%3A%20%5BCR-2569%5D%20Added%20type%20checking%20in%0A%20PatchOperation%20constructor%20and%20fixed%20the%20toJsonValue%20to%20set%20the%20field%20value%0A%20to%20a%20string&In-Reply-To=%3CCAOZ_4-A4AtZEteHucH%3D2BruSc%3DAwSS4smmkscoR-zOHfSmtfjg%40mail.gmail.com%3E"
+       TITLE="[Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string">matthew.swift at forgerock.com
+       </A><BR>
+    <I>Mon Nov 25 15:19:43 GMT 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000268.html">[Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string
+</A></li>
+        <LI>Next message: <A HREF="000278.html">[Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#276">[ date ]</a>
+              <a href="thread.html#276">[ thread ]</a>
+              <a href="subject.html#276">[ subject ]</a>
+              <a href="author.html#276">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Chad,
+
+Originally when I wrote the PatchOperation class I was unsure whether the
+operation types &quot;add&quot;, &quot;remove&quot;, &quot;replace&quot;, and &quot;increment&quot; would be
+sufficient for all applications. They are sufficient for Rest2LDAP, but I
+noticed that Paul B's patch internet draft included some additional
+operations, such as &quot;move&quot; and &quot;copy&quot;. Therefore, to make this class
+extensible, I opted to *not* use an enum and instead go for the weaker
+string based design that we have at the moment.
+
+This change suggests that perhaps the current four operation types (&quot;add&quot;,
+&quot;remove&quot;, &quot;replace&quot;, and &quot;increment&quot;) are sufficient after all. Do you
+agree? If so then I think it would be reasonable to convert this class to
+an enum based implementation.
+
+Let me know what you think.
+
+Matt
+
+
+
+On Fri, Nov 22, 2013 at 7:57 PM, &lt;<A HREF="https://lists.forgerock.org/mailman/listinfo/commons">noreply at forgerock.org</A>&gt; wrote:
+
+&gt;<i>   Revision 1308 &lt;<A HREF="http://sources.forgerock.org/changelog/commons/?cs=1308">http://sources.forgerock.org/changelog/commons/?cs=1308</A>&gt;
+</I>&gt;<i> Author chad.kienle Date 2013-11-22 18:57:05 +0000 (Fri, 22 Nov 2013) Log
+</I>&gt;<i> Message
+</I>&gt;<i>
+</I>&gt;<i> [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string
+</I>&gt;<i>
+</I>&gt;<i> Modified Paths
+</I>&gt;<i>
+</I>&gt;<i>    -
+</I>&gt;<i>    forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/resource/PatchOperation.java&lt;#142812c4e4f1483f_forgerockresttrunkjsonresourcesrcmainjavaorgforgerockjsonresourcePatchOperationjava&gt;
+</I>&gt;<i>
+</I>&gt;<i>  Diff
+</I>&gt;<i> Modified:
+</I>&gt;<i> forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/resource/PatchOperation.java
+</I>&gt;<i> (1307 =&gt; 1308)
+</I>&gt;<i>
+</I>&gt;<i> --- forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/resource/PatchOperation.java	2013-11-22 09:37:34 UTC (rev 1307)
+</I>&gt;<i> +++ forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/resource/PatchOperation.java	2013-11-22 18:57:05 UTC (rev 1308)@@ -434,6 +434,7 @@         this.operation = checkNotNull(operation, &quot;Cannot instantiate PatchOperation with null operation value&quot;);         this.field = checkNotNull(field, &quot;Cannot instantiate PatchOperation with null field value&quot;);         this.value = value != null ? value : new JsonValue(null);+        checkOperationType();         checkOperationValue();     } @@ -509,7 +510,7 @@     public JsonValue toJsonValue() {         final JsonValue json = new JsonValue(new LinkedHashMap&lt;String, Object&gt;(3));         json.put(FIELD_OPERATION, operation);-        json.put(FIELD_FIELD, field);+        json.put(FIELD_FIELD, field.toString());         if (!value.isNull()) {             json.put(FIELD_VALUE, value.getObject());         }@@ -533,6 +534,12 @@             }         }     }+
+</I>&gt;<i> +    private void checkOperationType() {
+</I>&gt;<i> +        if (!isAdd() &amp;&amp; !isRemove() &amp;&amp; !isIncrement() &amp;&amp; !isReplace()) {
+</I>&gt;<i> +            throw new IllegalArgumentException(&quot;Invalid patch operation type &quot; + operation);
+</I>&gt;<i> +        }
+</I>&gt;<i> +    }      private boolean is(final String type) {         return operation == type || operation.equalsIgnoreCase(type);
+</I>&gt;<i>
+</I>&gt;<i>  Copyright (c) by ForgeRock. All rights reserved.
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Commons mailing list
+</I>&gt;<i> <A HREF="https://lists.forgerock.org/mailman/listinfo/commons">Commons at forgerock.org</A>
+</I>&gt;<i> <A HREF="https://lists.forgerock.org/mailman/listinfo/commons">https://lists.forgerock.org/mailman/listinfo/commons</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="../attachments/20131125/9cc3b9ed/attachment.html">http://lists.forgerock.org/pipermail/commons/attachments/20131125/9cc3b9ed/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000268.html">[Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string
+</A></li>
+	<LI>Next message: <A HREF="000278.html">[Commons] [1308] forgerock-rest/trunk/json-resource/src/main/java/org/forgerock/json/ resource/PatchOperation.java: [CR-2569] Added type checking in PatchOperation constructor and fixed the toJsonValue to set the field value to a string
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#276">[ date ]</a>
+              <a href="thread.html#276">[ thread ]</a>
+              <a href="subject.html#276">[ subject ]</a>
+              <a href="author.html#276">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.forgerock.org/mailman/listinfo/commons">More information about the Commons
+mailing list</a><br>
+</body>
+<!-- Mirrored from lists.forgerock.org/pipermail/commons/2013-November/000276.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Sep 2018 02:56:27 GMT -->
+</html>
